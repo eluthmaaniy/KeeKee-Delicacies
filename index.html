@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KeeKee Delicacies - Your go-to platform for delicious meals, showcasing mouthwatering delicacies made with love. Order now and enjoy!">
+    <meta name="keywords" content="KeeKee Delicacies, food, delicious meals, order food, meals, tasty dishes, food delivery">
+    <meta name="author" content="KeeKee Delicacies">
+    <meta property="og:title" content="KeeKee Delicacies - Delicious Meals Delivered to Your Door">
+    <meta property="og:description" content="Indulge in KeeKee's best meals, delivered straight to your doorstep. Order now for a delicious experience!">
+    <meta property="og:image" content="link_to_your_image.jpg">
+    <meta property="og:url" content="https://www.keekeedelicacies.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    
+    <title>KeeKee Delicacies</title>
+    
+    <!-- Favicon -->
+     <link rel="icon" href=
+"https://res.cloudinary.com/dib5bkbsy/image/upload/v1729660919/1000684956-removebg-preview_besbfr.png" 
+          type="image/x-icon">
+   
+    <!-- CSS Links -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Futura:wght@400;700&display=swap' rel='stylesheet'/>
+     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Base font settings */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+/* Headings will use Playfair Display */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Futura', serif; /* Headings will use Playfair Display */
+    }
+        /* Custom chocolate color and yellow-500 */
+        .chocolate {
+            color: #7B3F00;
+        }
+        .bg-chocolate {
+            background-color: #7B3F00;
+        }
+        .bg-yellow-500 {
+            background-color: #D97706;
+        }
+        .hover-chocolate:hover {
+            background-color: #7B3F00;
+            color: #fff;
+        }
+        .hover-yellow-500:hover {
+            background-color: #D97706;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-yellow-50 text-gray-800">
+    <!-- Header -->
+   <header class="flex items-center justify-between p-4 bg-white text-gray-800 shadow-lg rounded-lg border-b border-yellow-500">
+    <div class="flex items-center">
+        <!-- Logo container with circular shape -->
+        <div class="bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+            <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1729625725/KEEKEE_20240819_203013_0000_kva2es.png" alt="Logo" class="w-10 h-10 rounded-full">
+        </div>
+        <h1 class="text-xl font-semibold">
+            <span class="chocolate">KeeKee</span>
+            <span class="text-yellow-500">Delicacies</span>
+        </h1>
+    </div>
+</div>
+
+        <div class="flex items-center space-x-4">
+            
+
+            <button class="md:hidden text-yellow-500" onclick="toggleMenu()" id="menuToggle">
+                <i class="ri-apps-fill ri-2x"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="hidden md:flex items-center justify-between px-6 py-4 bg-white text-gray-800">
+        <div class="flex space-x-4">
+            <a href="index.html" class="hover:text-yellow-500">Home</a>
+            <a href="about.html" class="hover:text-yellow-500">About Us</a>
+            <a href="menu.html" class="hover:text-yellow-500">Menu</a>
+            <a href="gallery.html" class="hover:text-yellow-500">Gallery</a>
+            <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+        </div>
+        <div class="flex space-x-4">
+            <button class="text-white bg-chocolate py-2 px-6 rounded-full hover-chocolate" id="navbarRegisterBtn">
+                <a href="menu.html">Order Now</a>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="hidden flex-col items-center bg-white text-gray-800 p-6">
+        <a href="index.html" class="menuItem text-yellow-500 hover:text-yellow-500">Home</a>
+        <a href="about.html" class="menuItem text-yellow-500 hover:text-yellow-500">About Us</a>
+        <a href="menu.html" class="menuItem text-yellow-500 hover:text-yellow-500">Menu</a>
+        <a href="gallery.html" class="menuItem text-yellow-500 hover:text-yellow-500">Gallery</a>
+        <a href="contact.html" class="menuItem text-yellow-500 hover:text-yellow-500">Contact</a>
+        
+        <!-- Dark Mode Toggle for Mobile -->
+        <button class="text-white bg-chocolate py-2 px-4 rounded-full hover-chocolate mt-4">
+            <a href="menu.html">Order Now</a>
+        </button>
+        
+        <button id="overlayDarkModeToggle" class="text-white hover:text-yellow-500 mt-2">
+            <i class="ri-moon-line ri-2x hidden" id="overlayDarkIcon"></i>
+            <i class="ri-sun-line ri-2x" id="overlayLightIcon"></i>
+        </button>
+    </div>
+
+    <!-- Add your main content here -->
+ <!-- Hero Section -->
+<section class="bg-auto text-yellow-500 py-20" data-aos="fade-up" data-aos-duration="1500">
+    <!-- Container for content -->
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+        
+        <!-- Text content -->
+        <div class="md:w-1/2 flex flex-col items-start justify-center space-y-6" data-aos="fade-right" data-aos-duration="1500">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                Welcome to <span class="chocolate">KeeKee Delicacies</span>
+            </h1>
+            <p class="text-gray-800 md:text-xl font-light" data-aos="fade-right" data-aos-duration="1800">
+                Experience the finest homemade baked goods and delicacies crafted with passion, love, and the freshest ingredients.
+            </p>
+            <div class="flex space-x-4" data-aos="fade-up" data-aos-duration="2000">
+                <!-- Call-to-Action Buttons -->
+                <a href="menu.html" class="bg-chocolate text-white py-3 px-8 rounded-full text-lg hover-chocolate transition-all">
+                    Order Now
+                </a>
+                <a href="menu.html" class="text-yellow-500 border border-yellow-500 py-3 px-8 rounded-full text-lg hover-yellow-500 transition-all">
+                    View Menu
+                </a>
+            </div>
+        </div>
+        
+        <!-- Image/Visual content -->
+        <div class="md:w-1/2 mt-12 md:mt-0" data-aos="zoom-in" data-aos-duration="2000">
+            <!-- Image goes here (Placeholder for now, replace with an actual image link) -->
+            <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1729587786/images_cbqvfw.jpg" alt="Baked Goods" class="rounded-lg shadow-lg">
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="bg-yellow-100 py-16 text-gray-800" data-aos="fade-up" data-aos-duration="1500">
+    <div class="container mx-auto px-6 flex flex-col items-center" data-aos="fade-up" data-aos-duration="1800">
+        <h2 class="text-3xl md:text-4xl font-bold text-chocolate mb-6" data-aos="zoom-in" data-aos-duration="1500">
+            About Us
+        </h2>
+        <p class="text-lg md:text-xl font-light text-chocolate max-w-2xl text-center mb-8" data-aos="fade-up" data-aos-duration="2000">
+            At KeeKee Delicacies, we are passionate about baking and bringing smiles to our customers' faces.
+            With a rich history of homemade recipes, we specialize in providing freshly baked goods that are both delicious and heartwarming.
+            Every bite tells a story of tradition, quality, and love.
+        </p>
+    </div>
+</section>
+
+
+<!-- Menu Section -->
+<section id="menu" class="bg-auto py-10 text-chocolate">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6" data-aos="fade-up" data-aos-duration="1000">
+            Our Menu
+        </h2>
+        <p class="text-lg md:text-xl font-light text-gray-800 mb-12" data-aos="fade-up" data-aos-duration="1500">
+            Discover our delightful range of homemade baked goods, crafted with the finest ingredients.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Menu Item 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-3" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1729625728/1000227534_iytk7a.jpg" alt="Chocolate Cake" class="w-full h-24 object-cover rounded-lg mb-2">
+                <h3 class="text-lg font-semibold text-chocolate">Cake</h3>
+                <p class="text-gray-600">Rich and moist chocolate cake, layered with creamy chocolate frosting.</p>
+            </div>
+
+            <!-- Menu Item 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-3" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1729625736/1000128263_jprbnk.jpg" alt="Cookies" class="w-full h-24 object-cover rounded-lg mb-2">
+                <h3 class="text-lg font-semibold text-chocolate">Small Chops</h3>
+                <p class="text-gray-600">Freshly baked cookies available in chocolate chip and oatmeal raisin.</p>
+            </div>
+
+            <!-- Menu Item 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-3" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1729625722/IMG-20241022-WA0035_ojzcqe.jpg" alt="Puff Puff" class="w-full h-24 object-cover rounded-lg mb-2">
+                <h3 class="text-lg font-semibold text-chocolate">Burger</h3>
+                <p class="text-gray-600">Soft and fluffy Nigerian donuts, fried to golden perfection.</p>
+            </div>
+
+            <!-- Menu Item 4 -->
+            <div class="bg-white rounded-lg shadow-lg p-3" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1729625722/IMG-20241022-WA0034_fjg9gv.jpg" alt="Lemon Tart" class="w-full h-24 object-cover rounded-lg mb-2">
+                <h3 class="text-lg font-semibold text-chocolate">Shawarma</h3>
+                <p class="text-gray-600">A refreshing lemon tart with a buttery crust and a hint of zest.</p>
+            </div>
+        </div>
+
+        <div class="mt-8" data-aos="fade-up" data-aos-duration="1000">
+            <a href="menu.html" class="bg-chocolate text-white py-3 px-6 rounded-full hover:bg-yellow-500 transition-all">
+                View Full Menu
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Opening Hours Section -->
+<section class="bg-chocolate py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up" data-aos-duration="1000">
+            Opening Hours
+        </h2>
+        <p class="text-lg md:text-xl text-white font-light mb-12" data-aos="fade-up" data-aos-duration="1500">
+            We are here to serve you!
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="flex items-center justify-center bg-yellow-500 rounded-lg p-6 shadow-lg transform hover:scale-105 transition-transform" data-aos="fade-right" data-aos-duration="1000">
+                <i class="ri-time-line ri-2x text-gray-800 mr-4"></i>
+                <div class="text-left">
+                    <h3 class="text-xl font-semibold text-gray-800">Monday - Friday</h3>
+                    <p class="text-white">8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center bg-yellow-500 rounded-lg p-6 shadow-lg transform hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="1000">
+                <i class="ri-time-line ri-2x text-gray-800 mr-4"></i>
+                <div class="text-left">
+                    <h3 class="text-xl font-semibold text-gray-800">Saturday</h3>
+                    <p class="text-white">8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center bg-yellow-500 rounded-lg p-6 shadow-lg transform hover:scale-105 transition-transform" data-aos="fade-left" data-aos-duration="1000">
+                <i class="ri-time-line ri-2x text-gray-800 mr-4"></i>
+                <div class="text-left">
+                    <h3 class="text-xl font-semibold text-gray-800">Sunday</h3>
+                    <p class="text-white">10:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials Section -->
+<section id="testimonialsSection" class="px-6 md:px-20 py-10 md:py-32 bg-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-500" data-aos="fade-up" data-aos-duration="1500">What Our Customers Say</h2>
+    
+    <!-- Testimonial Slider -->
+    <div class="testimonial-slider relative">
+      
+        <!-- Testimonial 1 -->
+        <div class="testimonial-item text-center p-6 bg-white rounded-lg shadow-lg mx-4 border-b border-t border-yellow-500" id="testimonial1" data-aos="fade-up" data-aos-duration="2000">
+            <i class="ri-discuss-line text-4xl text-yellow-500 mb-4" data-aos="zoom-in" data-aos-duration="1200"></i>
+            <p class="text-lg md:text-xl italic text-gray-600 mb-4" data-aos="fade-up" data-aos-delay="200">"KeeKee Delicacies: This is absolutely fire, guyyyyyyy! 🔥"</p>
+            <div class="flex items-center justify-center" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1721301156/images_5_ngtz0v.jpg" alt="Customer Image" class="w-16 h-16 rounded-full mr-4">
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">Lillian</h4>
+                    <p class="text-gray-500">Student</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-item text-center p-6 bg-white rounded-lg shadow-lg mx-4 border-b border-t border-yellow-500" id="testimonial2" data-aos="fade-up" data-aos-duration="2000">
+            <i class="ri-discuss-line text-4xl text-yellow-500 mb-4" data-aos="zoom-in" data-aos-duration="1200"></i>
+            <p class="text-lg md:text-xl italic text-gray-600 mb-4" data-aos="fade-up" data-aos-delay="200">"To be honest, your meat and puff-puff are so good, someone could spend their school fees on them. It’s on a whole different level!"</p>
+            <div class="flex items-center justify-center" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1721300995/images_3_prqpng.jpg" alt="Customer Image" class="w-16 h-16 rounded-full mr-4">
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">Airneh</h4>
+                    <p class="text-gray-500">Student</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-item text-center p-6 bg-white rounded-lg shadow-lg mx-4 border-b border-t border-yellow-500" id="testimonial3" data-aos="fade-up" data-aos-duration="2000">
+            <i class="ri-discuss-line text-4xl text-yellow-500 mb-4" data-aos="zoom-in" data-aos-duration="1200"></i>
+            <p class="text-lg md:text-xl italic text-gray-600 mb-4" data-aos="fade-up" data-aos-delay="200">"Wow, no cap, I wasn’t disappointed at all! It tastes so nice and yummy 😋😋. I’m definitely getting more soon!"</p>
+            <div class="flex items-center justify-center" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://res.cloudinary.com/dib5bkbsy/image/upload/v1721300995/images_wx9nhd.jpg" alt="Customer Image" class="w-16 h-16 rounded-full mr-4">
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-800">Salmah</h4>
+                    <p class="text-gray-500">Student</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add more testimonials as needed -->
+    </div>
+</section>
+
+<!-- Newsletter Subscription Section -->
+<section id="newsletterSection" class="px-6 md:px-20 py-10 md:py-32 bg-chocolate text-white">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-6" data-aos="fade-up" data-aos-duration="1500">Subscribe to Our Newsletter</h2>
+    <p class="text-lg text-center mb-8" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">Stay updated with the latest news and delicious offers from KeeKee Delicacies!</p>
+    
+    <form action="#" method="post" class="flex justify-center" data-aos="zoom-in" data-aos-duration="1000">
+        <input type="email" placeholder="Enter your email" class="p-3 md:p-4 rounded-l-lg border-2 border-yellow-500 focus:outline-none focus:border-yellow-600" required>
+        <button type="submit" class="bg-yellow-500 text-white p-3 md:p-4 rounded-r-lg font-semibold hover:bg-yellow-600 transition duration-300">Subscribe</button>
+    </form>
+
+    <div class="flex justify-center mt-6 space-x-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <a href="https://wa.me/message/KDJXWJJ4KIRYM1" aria-label="WhatsApp" class="text-white hover:text-yellow-500 transition duration-300">
+            <i class="ri-whatsapp-fill text-2xl"></i>
+        </a>
+        <a href="https://x.com/KeekeeDelicacie?t=T06r-GGziqFLURj91Y1p7A&s=09" aria-label="Twitter" class="text-white hover:text-yellow-500 transition duration-300">
+            <i class="ri-twitter-fill text-2xl"></i>
+        </a>
+        <a href="https://www.instagram.com/keekee_delicacies/profilecard/?igsh=M251MXR5eWZrbGow" aria-label="Instagram" class="text-white hover:text-yellow-500 transition duration-300">
+            <i class="ri-instagram-fill text-2xl"></i>
+        </a>
+        
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faqSection" class="px-6 md:px-20 py-10 md:py-32 bg-auto" data-aos="fade-up" data-aos-duration="1000">
+    <h5 class="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-500" data-aos="zoom-in" data-aos-duration="1500">Frequently Asked Questions</h5>
+    <div class="space-y-6">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-white rounded-lg shadow-lg p-6 border-b border-yellow-500" data-aos="fade-right" data-aos-duration="1200">
+            <div class="flex items-center justify-between cursor-pointer" id="faq1Question">
+                <h5 class="text-xl font-semibold text-gray-900">How can I place an order?</h5>
+                <i class="ri-arrow-down-s-line text-2xl text-yellow-500" id="faq1Toggle"></i>
+            </div>
+            <p class="text-gray-600 mt-4 hidden" id="faq1Answer">To place an order, visit our menu page, select your desired items, and follow the checkout process.</p>
+        </div>
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-white rounded-lg shadow-lg p-6 border-b border-yellow-500" data-aos="fade-right" data-aos-duration="1300">
+            <div class="flex items-center justify-between cursor-pointer" id="faq2Question">
+                <h5 class="text-xl font-semibold text-gray-800">What catering options do you offer?</h5>
+                <i class="ri-arrow-down-s-line text-2xl text-yellow-500" id="faq2Toggle"></i>
+            </div>
+            <p class="text-gray-600 mt-4 hidden" id="faq2Answer">We offer a variety of catering options, including buffet, plated dinners, and cocktail services tailored to your event.</p>
+        </div>
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-white rounded-lg shadow-lg p-6 border-b border-yellow-500" data-aos="fade-right" data-aos-duration="1400">
+            <div class="flex items-center justify-between cursor-pointer" id="faq3Question">
+                <h5 class="text-xl font-semibold text-gray-800">Can I customize my menu?</h5>
+                <i class="ri-arrow-down-s-line text-2xl text-yellow-500" id="faq3Toggle"></i>
+            </div>
+            <p class="text-gray-600 mt-4 hidden" id="faq3Answer">Yes! We love to work with clients to create a custom menu that fits your tastes and preferences.</p>
+        </div>
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-white rounded-lg shadow-lg p-6 border-b border-yellow-500" data-aos="fade-right" data-aos-duration="1500">
+            <div class="flex items-center justify-between cursor-pointer" id="faq4Question">
+                <h5 class="text-xl font-semibold text-gray-800">What is your cancellation policy?</h5>
+                <i class="ri-arrow-down-s-line text-2xl text-yellow-500" id="faq4Toggle"></i>
+            </div>
+            <p class="text-gray-600 mt-4 hidden" id="faq4Answer">We understand that plans change. Please contact us within 48 hours of your event for cancellations or changes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contactSection" class="px-6 md:px-20 py-10 md:py-32 bg-yellow-100" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center" data-aos="zoom-in" data-aos-duration="1500">Contact Us</h2>
+    <p class="text-center mb-6" data-aos="fade-up" data-aos-duration="1500">We're here to help! Please fill out the form below, and we'll get back to you shortly.</p>
+    
+    <div class="flex flex-col items-center">
+        <!-- Business Location -->
+        <div class="mt-6 mb-6 flex flex-col items-center" data-aos="fade-up" data-aos-duration="1700">
+            <h3 class="text-2xl font-semibold mb-4 text-center">Our Location</h3>
+            <p class="flex items-center justify-center text-center">
+                <i class="ri-map-pin-2-line mr-2"></i> 
+               After UniAbuja Permanent Site, Along Airport Road, Iddo Sarki, Abuja. 
+            </p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="w-full max-w-md" data-aos="fade-up" data-aos-duration="2000">
+            <form action="https://formspree.io/f/your_form_id" method="POST" class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4" data-aos="fade-right" data-aos-duration="1200">
+                    <label for="name" class="block text-lg font-semibold mb-2">
+                        <i class="ri-user-3-line"></i> Name
+                    </label>
+                    <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                </div>
+                <div class="mb-4" data-aos="fade-right" data-aos-duration="1400">
+                    <label for="email" class="block text-lg font-semibold mb-2">
+                        <i class="ri-mail-line"></i> Email
+                    </label>
+                    <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                </div>
+                <div class="mb-4" data-aos="fade-right" data-aos-duration="1600">
+                    <label for="message" class="block text-lg font-semibold mb-2">
+                        <i class="ri-message-3-line"></i> Message
+                    </label>
+                    <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                </div>
+                <button type="submit" class="bg-yellow-500 text-white p-3 rounded font-semibold hover:bg-yellow-600 transition duration-300" data-aos="fade-up" data-aos-duration="1800">
+                    <i class="ri-send-plane-2-line"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-chocolate text-white py-6">
+    <div class="container mx-auto px-6 md:px-20">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-semibold">Our Business Info</h3>
+                <p class="flex items-center mb-1">
+                    <i class="ri-phone-line mr-2"></i>
+                    +2348129681448
+                </p>
+                <p class="flex items-center">
+                    <i class="ri-mail-line mr-2"></i>
+                    kikelomookikiola4@gmail.com
+                </p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-yellow-400 transition duration-300">
+                    <i class="ri-facebook-circle-fill"></i>
+                </a>
+                <a href="https://x.com/KeekeeDelicacie?t=T06r-GGziqFLURj91Y1p7A&s=09" class="text-white hover:text-yellow-400 transition duration-300">
+                    <i class="ri-twitter-fill"></i>
+                </a>
+                <a href="https://www.instagram.com/keekee_delicacies/profilecard/?igsh=M251MXR5eWZrbGow" class="text-white hover:text-yellow-400 transition duration-300">
+                    <i class="ri-instagram-fill"></i>
+                </a>
+                
+            </div>
+        </div>
+        <hr class="border-gray-700 mb-4">
+        <p class="text-center text-sm">
+            &copy; 2024 KeeKee Delicacies. All rights reserved.
+        </p>
+        <div class="text-center">
+            <a href="privacy-policy.html" class="text-sm hover:text-yellow-400">Privacy Policy</a> | 
+            <a href="tos.html" class="text-sm hover:text-yellow-400">Terms of Service</a> | 
+ 
+            <a href="about.html" class="text-sm hover:text-yellow-400">About Us</a> | 
+            <a href="contact.html" class="text-sm hover:text-yellow-400">Contact</a>
+        </div>
+    </div>
+</footer>
+
+
+ <script>
+        // Toggle Menu Overlay
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menuOverlay');
+            const isVisible = menuOverlay.style.display === 'flex';
+            menuOverlay.style.display = isVisible ? 'none' : 'flex';
+        }
+    </script>
+    
+    
+    <script>
+    // Simple automatic slider for testimonials
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.classList.add('hidden');
+            if (i === index) {
+                testimonial.classList.remove('hidden');
+            }
+        });
+    }
+
+    function rotateTestimonials() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+    }
+
+    // Show the first testimonial
+    showTestimonial(currentTestimonial);
+
+    // Rotate testimonials every 5 seconds
+    setInterval(rotateTestimonials, 5000);    
+
+
+// FAQ Toggle Script
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.flex');
+        const answer = item.querySelector('p');
+        const toggleIcon = question.querySelector('i');
+        
+        question.addEventListener('click', () => {
+            const isHidden = answer.classList.contains('hidden');
+            answer.classList.toggle('hidden', !isHidden);
+            toggleIcon.classList.toggle('ri-arrow-down-s-line', isHidden);
+            toggleIcon.classList.toggle('ri-arrow-up-s-line', !isHidden);
+        });
+    });          
+  </script> 
+  
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+        <script>
+        // Initialize AOS
+        AOS.init();
+        
+    </script>
+</body>
+</html>
